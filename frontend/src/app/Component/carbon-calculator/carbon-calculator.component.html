@@ -1,0 +1,35 @@
+<div class="carbon-header">
+    <h1>Carbon Calculator</h1><br>
+    <p>Calculate Your Carbon Footprint and Travel Cost</p>
+</div>
+<section class="carbon-section">
+    <div class="carbon-container">
+        <h2 class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent  font-bold">Carbon Footprint Calculator</h2>
+    
+        <form [formGroup]="carbonForm" (ngSubmit)="calculate()">
+            <label for="mode" class="font-semibold font-mono">Select Mode of Transport:</label>
+            <select formControlName="mode" >
+                <option value="car_petrol">Car (Petrol)</option>
+                <option value="car_diesel">Car (Diesel)</option>
+                <option value="car_electric">Car (Electric)</option>
+                <option value="bus">Bus</option>
+                <option value="bike">Bike</option>
+                <option value="walking">Walking</option>
+            </select>
+    
+            <label for="distance" class="font-extrabold font-mono">Distance (in km):</label>
+            <input type="number" formControlName="distance" required/>
+    
+            <button class="font-semibold font-mono bg-gradient-to-tr " type="submit">Calculate</button>
+        </form>
+    
+        <div *ngIf="carbonFootprint !== null && travelCost !== null" >
+            <h3 class="font-bold text-blue-400 font-mono">
+                🌱 Your Carbon Footprint:<span class="text-lg text-white"> {{ carbonFootprint}} kg CO₂</span>
+            </h3>
+            <h3 class="font-bold text-green-500 font-mono mt-2">
+                💰 Estimated Travel Cost: <span class="text-lg text-white">₹ {{ travelCost }}</span>
+            </h3>
+        </div>
+    </div>    
+</section>

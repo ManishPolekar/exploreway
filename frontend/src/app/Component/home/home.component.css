@@ -1,0 +1,721 @@
+.home {
+    background-image: url("../../../assets/kashmir.jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This keeps the image fixed */
+    height: 650px; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .home-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  button {
+    background-color: darkcyan;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 5px;
+    border-radius: 25px;
+  }
+  /*Service Section*/
+  .service-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #fffbfb;
+  }
+  
+  .text-container {
+    flex: 1 1 40%;
+    padding: 1rem;
+  }
+  .text-container h2 {
+    font-size: 2rem;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .text-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .text-columns h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .text-columns p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  .image-container {
+    flex: 1 1 50%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .image-container img {
+    width: 50%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: fill;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*Quote Section */
+  .quote-section {
+    margin-top: 2rem auto;
+    height: 100px;
+    text-align: center;
+    font-style: italic;
+    color: #4a4a4a;
+    background-color: #fffbfb;
+  }
+  .quote-section blockquote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+    position: relative;
+  }
+  
+  .quote-section blockquote:before {
+    top: -0.5rem;
+    left: -1.5rem;
+  }
+  
+  .quote-section blockquote:after {
+    bottom: -0.5rem;
+    right: -1.5rem;
+  }
+  
+  /* Transport Section */
+  .transport {
+    text-align: center;
+    background-color: rgb(235, 231, 231);
+    padding: 40px 20px;
+  }
+  .transport-text {
+    margin-bottom: 40px;
+  }
+  .transport-text h5 {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(10, 93, 10);
+    margin-bottom: 10px;
+  }
+  .transport-text p {
+    font-size: 35px;
+    font-weight: 400;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 20px;
+  }
+  .image-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-card:hover {
+    transform: scale(1.05);
+  }
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+  
+  .overlay p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+  }
+  /*Contact Section*/
+  .contact {
+    background-image: url("../../../assets/mumbai.jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This keeps the image fixed */
+    height: 700px; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .text-box {
+    background-color: whitesmoke;
+    height: auto;
+    width: 25%;
+    max-width: 600px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .contact-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .contact-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .contact-text button {
+    background-color: #00593c;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .contact-text button:hover {
+    background-color: #00754d;
+  }
+  
+  /*Our Fleet*/
+  
+  .Fleet {
+    text-align: center;
+    background-color: rgb(244, 241, 241);
+    padding: 10px 40px;
+  }
+  .fleet-text {
+    font-size: 20px;
+  }
+  .fleet-text h4 {
+    color: green;
+  }
+  .fleet-text p {
+    color: #666;
+    font-style: italic;
+    font-size: xx-large;
+  }
+  .cab-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: end;
+    gap: 20px;
+  }
+  .cab-card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  .cab-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .cab-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: start;
+    align-items: center;
+    opacity: 1;
+  }
+  .cab-info button {
+    background-color: transparent;
+    border: 2px solid white;
+    margin-left: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .cab-info span {
+    color: wheat;
+    margin-left: 50px;
+  }
+  
+  .cab-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  @media screen and (max-width: 767px) {
+    .home-text h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .home-text p {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .button, button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+  
+    .text-columns {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .image-container img {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .cab-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .contact .text-box {
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+
+  /* Styles for smaller mobile devices (typical phone screens) */
+@media screen and (max-width: 480px) {
+  .home {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 40px 20px; /* Add some padding */
+  }
+
+  .home-text {
+    width: 90%; /* Make text container wider */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Smaller heading */
+    margin-bottom: 1rem;
+  }
+
+  .home-text p {
+    font-size: 1.2rem; /* Smaller paragraph */
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem; /* Adjust button padding */
+    font-size: 1.1rem;
+  }
+
+  .service-section {
+    padding: 1.5rem;
+  }
+
+  .text-container {
+    flex: 1 1 100%; /* Full width for text container */
+    margin-bottom: 2rem; /* Add spacing between text and images */
+  }
+
+  .text-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .text-columns {
+    flex-direction: column; /* Stack columns on smaller screens */
+    gap: 1.5rem;
+  }
+
+  .text-columns h3 {
+    font-size: 1.3rem;
+  }
+
+  .image-container {
+    flex-direction: column; /* Stack images */
+    gap: 1.5rem;
+  }
+
+  .image-container img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .quote-section {
+    padding: 1rem;
+    height: auto; /* Adjust height */
+  }
+
+  .quote-section blockquote {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .transport {
+    padding: 30px 15px;
+  }
+
+  .transport-text h5 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .transport-text p {
+    font-size: 24px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr; /* Single column grid */
+    gap: 15px;
+  }
+
+  .image-card {
+    max-width: 100%; /* Full width for image cards */
+    height: 200px; /* Adjust height */
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .contact {
+    height: auto; /* Adjust height */
+    padding: 40px 20px;
+  }
+
+  .text-box {
+    width: 90%; /* Wider text box */
+    padding: 15px 30px;
+  }
+
+  .contact-text h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .contact-text p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .contact-text button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .Fleet {
+    padding: 10px 20px;
+  }
+
+  .fleet-text {
+    font-size: 18px;
+  }
+
+  .fleet-text p {
+    font-size: x-large;
+  }
+
+  .cab-container {
+    grid-template-columns: 1fr; /* Single column grid */
+    gap: 15px;
+    justify-content: center; /* Center items */
+  }
+
+  .cab-card {
+    max-width: 100%; /* Full width for cab cards */
+    height: 200px; /* Adjust height */
+    margin-top: 15px;
+  }
+
+  .cab-info button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .cab-info span {
+    margin-left: 30px;
+  }
+
+  .cab-info p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Styles for tablets (larger mobile devices) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .home {
+    height: auto;
+    padding: 60px 30px;
+  }
+
+  .home-text {
+    width: 80%;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .home-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .service-section {
+    padding: 2rem;
+  }
+
+  .text-container {
+    flex: 1 1 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .text-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-columns {
+    flex-direction: row; /* Keep columns side by side on tablets */
+    gap: 2rem;
+  }
+
+  .text-columns > div {
+    flex: 1;
+  }
+
+  .text-columns h3 {
+    font-size: 1.4rem;
+  }
+
+  .image-container {
+    flex-direction: row; /* Keep images side by side */
+    gap: 2rem;
+  }
+
+  .image-container img {
+    width: 48%; /* Adjust image width */
+    height: 350px; /* Adjust height */
+  }
+
+  .quote-section {
+    padding: 1.5rem;
+    height: auto;
+  }
+
+  .quote-section blockquote {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+
+  .transport {
+    padding: 50px 25px;
+  }
+
+  .transport-text h5 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .transport-text p {
+    font-size: 30px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min width */
+    gap: 20px;
+  }
+
+  .image-card {
+    max-width: 100%;
+    height: 220px; /* Adjust height */
+  }
+
+  .overlay p {
+    font-size: 15px;
+  }
+
+  .contact {
+    height: auto;
+    padding: 60px 30px;
+  }
+
+  .text-box {
+    width: 70%;
+    padding: 20px 35px;
+  }
+
+  .contact-text h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .contact-text p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact-text button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .Fleet {
+    padding: 20px 30px;
+  }
+
+  .fleet-text {
+    font-size: 20px;
+  }
+
+  .fleet-text p {
+    font-size: xx-large;
+  }
+
+  .cab-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Maintain similar grid */
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .cab-card {
+    max-width: 100%;
+    height: 220px; /* Adjust height */
+    margin-top: 20px;
+  }
+
+  .cab-info button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .cab-info span {
+    margin-left: 40px;
+  }
+
+  .cab-info p {
+    font-size: 1.2rem;
+  }
+}  
+@media screen and (max-width: 768px) {
+  .home {
+    height: auto; /* Adjust height to fit content */
+    padding: 80px 20px; /* Add more vertical padding */
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .home-text {
+    position: static; /* Allow text to flow naturally */
+    transform: none; /* Remove centering transformation */
+    width: 90%; /* Occupy more width */
+    margin: 0 auto; /* Center the text block */
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem; /* Adjust heading size */
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Improve line spacing */
+  }
+
+  .home-text p {
+    font-size: 1.3rem; /* Adjust paragraph size */
+    margin-bottom: 1.5rem;
+    line-height: 1.4; /* Improve line spacing */
+  }
+
+  .home button {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px; /* Adjust button rounding */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    padding: 60px 15px; /* Further reduce padding for smaller phones */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Smaller heading for very small screens */
+  }
+
+  .home-text p {
+    font-size: 1.1rem; /* Smaller paragraph for very small screens */
+  }
+
+  .home button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 15px; /* Further adjust button rounding */
+  }
+}
+
+
+  
+  
+  

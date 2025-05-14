@@ -1,0 +1,231 @@
+.services {
+    background-image: url(../../../assets/airport.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 550px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    filter: contrast(70%);
+}
+.services-text {
+    position: absolute;
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 700;
+    color: black;
+    top: 40%;
+    bottom: 70%;
+}
+.services-text h1 {
+    margin-left: 90px;
+}
+h4:hover {
+    color: yellow;
+    transform: scale(1.2);
+    border: 1px dotted yellow;
+}  
+.service-section {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+    height: 250px;
+}
+.services-container h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    color: green;
+}
+p {
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 300;
+}
+.services-para p {
+    font-style: normal;
+    font-size: 25px;
+    color: gray;
+}
+  
+/* Transport Section */
+.service-ocassions {
+    height: auto;
+    text-align: center;
+    background-color: rgb(235, 231, 231);
+    padding: 40px 20px;
+}
+.service-text {
+    margin-bottom: 40px;
+}
+.service-text h5 {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(10, 93, 10);
+    margin-bottom: 10px;
+}
+.service-text p {
+    font-size: 35px;
+    font-weight: 400;
+    font-style: italic;
+    color: #666;
+}  
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 20px;
+}
+.service-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}  
+.service-card:hover {
+    transform: scale(1.05);
+}
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+} 
+.overlay p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+}
+/* Media query for tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .services {
+    height: auto; /* Adjust height */
+    padding: 60px 20px; /* Add vertical padding */
+    background-size: cover; /* Ensure background covers */
+  }
+
+  .services-text {
+    position: static; /* Adjust positioning */
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    top: auto; /* Reset top */
+    bottom: auto; /* Reset bottom */
+  }
+
+  .services-text h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-left: 0; /* Reset margin */
+  }
+
+  .services-text h4 {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .service-section {
+    flex-direction: column; /* Stack content */
+    padding: 30px 20px;
+    gap: 20px;
+    height: auto; /* Adjust height */
+    text-align: center; /* Center text */
+  }
+
+  .services-container h1 {
+    font-size: 2rem; /* Adjust font size */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .services-para p {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .service-ocassions {
+    padding: 30px 15px;
+  }
+
+  .service-text p {
+    font-size: 2rem; /* Adjust font size */
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid */
+    gap: 15px;
+  }
+
+  .service-card {
+    max-width: 100%; /* Full width */
+    height: 200px; /* Adjust height */
+  }
+
+  .overlay p {
+    font-size: 14px; /* Adjust font size */
+  }
+}
+
+/* Media query for mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .services-text h1 {
+    font-size: 2rem; /* Adjust font size */
+  }
+
+  .services-text h4 {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .services-container h1 {
+    font-size: 1.7rem; /* Adjust font size */
+  }
+
+  p {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .services-para p {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .service-text p {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 10px;
+  }
+
+  .service-card {
+    height: 180px; /* Adjust height */
+  }
+
+  .overlay p {
+    font-size: 12px; /* Adjust font size */
+  }
+}  

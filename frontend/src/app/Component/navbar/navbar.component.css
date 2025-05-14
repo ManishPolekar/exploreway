@@ -1,0 +1,224 @@
+mat-toolbar {
+  /*background-color: rgb(46, 69, 46);*/
+  background: linear-gradient(to right, #1a2a6c, #16222a);
+  color: #fff;
+  font-weight: normal;
+  font-size: x-large;
+  font-family: "Times New Roman", Times, serif;
+  height: 120px;
+  
+}
+.navbar {
+  flex: 1 0 auto;
+  margin: auto;
+}
+/*navbar links*/
+.button {
+  position: relative;
+  background: none !important;
+  border: none !important;
+  font-weight: 570;
+  font-size: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  color: white !important;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white !important;
+  transition: width 0.5s ease-in-out;
+}
+.button:hover {
+  color: white !important;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+/*dropdown menu*/
+.drop-down {
+  position: relative;
+  background: none;
+  border: none;
+  font-weight: 550;
+  font-size: 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.drop-down::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.4s ease-in-out;
+}
+
+.drop-down:hover::after {
+  width: 100%;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-symbols-outlined {
+  color: white !important;
+  font-size: 40px; /* Adjust size if needed */
+  vertical-align: middle;
+  line-height: 1; /* Ensures the icon aligns properly */
+}
+
+/* Media query for tablets and larger phones (max-width: 960px) */
+@media screen and (max-width: 960px) {
+  mat-toolbar {
+    height: auto;
+    flex-direction: column; /* Stack logo and nav container */
+    align-items: center; /* Center items horizontally */
+    padding: 15px;
+  }
+
+  .flex.items-center {
+    width: 100%;
+    justify-content: space-between; /* Space logo and menu button */
+    margin-bottom: 15px;
+  }
+
+  .text-3xl {
+    font-size: 1.6rem;
+  }
+
+  /* Container for the horizontal navigation links */
+  .mobile-nav-links {
+    display: flex; /* Enable flexbox for horizontal layout */
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+
+  .button {
+    font-size: 1.1rem;
+    margin: 5px 10px;
+    /* Remove display: inline-block; */
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  button {
+    margin-left: auto; /* Push the more button to the right */
+  }
+
+  .material-symbols-outlined {
+    font-size: 2.2rem;
+  }
+
+  /* Show the regular links and ensure they are flex items */
+  mat-toolbar > a.button {
+    display: block; /* Make them block elements to work with flex layout */
+  }
+
+  mat-toolbar {
+    display: flex; /* Ensure mat-toolbar is a flex container */
+    flex-direction: column; /* Keep stacking for logo and links container */
+    align-items: center; /* Center horizontally */
+  }
+
+  .mobile-nav-links {
+    display: flex; /* Make the links container a flex container */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center the links */
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 960px) {
+  mat-toolbar {
+    display: flex;
+    flex-direction: row; /* Keep it in a row */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .flex.items-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .button {
+    font-size: 1.1rem;
+    margin: 5px 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent text wrap */
+  }
+
+  button[mat-button] {
+    margin: 5px 0;
+  }
+
+  .material-symbols-outlined {
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+
+  .navbar {
+    display: none; /* Hide if it’s just a spacer */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  mat-toolbar {
+    padding: 8px 10px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .text-3xl {
+    font-size: 1.2rem;
+  }
+
+  .h-10, .w-10 {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.8rem;
+  }
+  .flex.items-center {
+    gap: 6px;
+    justify-content: center;
+  }
+  
+  .text-3xl {
+    font-size: 1.3rem;
+  }
+  
+  .h-10, .w-10 {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="review-container">
+    <h3>Rate & Review this Bus Route</h3>
+  
+    <!-- Star Rating Selection -->
+    <div class="stars">
+      <span *ngFor="let star of [1,2,3,4,5]" (click)="rating = star" [class.filled]="star <= rating">
+        ★
+      </span>
+    </div>
+  
+    <!-- Comment Box -->
+    <textarea [(ngModel)]="comment" placeholder="Write your review..."></textarea>
+    
+    <button (click)="submitReview()">Submit Review</button>
+  
+</div>
+<!-- Display Reviews -->
+<h4 class="text-center text-3xl font-semibold text-black font-[Poppins]">Reviews</h4>
+<div class="review-list">
+  <div *ngFor="let review of reviews; let i = index" class="review-card">
+    <p><strong>Rating:</strong> {{ review.rating }}/5</p>
+    <p>{{ review.comment }}</p>
+    <small>Posted on: {{ review.timestamp | date:'medium' }}</small>
+    
+    <!-- Show delete button only for the current user -->
+    <button *ngIf="review.userId === userId" (click)="deleteReview(i)">Delete</button>
+  </div>
+</div>
+  

@@ -1,0 +1,193 @@
+.carbon-header {
+    background-image: url("../../../assets/leaf-nature.jpg");
+    background-position: center;
+    background-size: cover;
+    /*background-size: 100% 100%;*/
+    background-repeat: no-repeat;
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /*filter: contrast(40%);*/
+}
+.carbon-header h1 {
+    color: whitesmoke;
+    position: absolute;
+    font-size: 30px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}    
+.carbon-header p {
+    color: greenyellow;
+    font-size: 30px;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+.carbon-section {
+    padding: 50px 0;
+    /*background-color: #E0F7FA;*/
+    background: linear-gradient(135deg, #001f3f, #005f73, #0a9396);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.carbon-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 24px;
+    background: linear-gradient(135deg, #0a2e38, #03677b, #27b5c0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px 50px 30px 10px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+.carbon-container:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 191, 165, 0.2);
+    transform: scale(1.02);
+}
+form { 
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    margin: 10px 0 5px;
+}
+  
+input,
+select,
+button {
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 114, 255, 0.3);
+}
+/* Media query for tablets and larger phones (max-width: 960px) */
+@media screen and (max-width: 960px) {
+  .carbon-header {
+    height: auto;
+    padding: 60px 20px;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .carbon-header h1 {
+    position: static;
+    transform: none;
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+
+  .carbon-header p {
+    position: static;
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .carbon-section {
+    padding: 40px 20px;
+  }
+
+  .carbon-container {
+    max-width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  label {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+
+  input,
+  select,
+  button {
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+/* Media query for mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .carbon-header h1 {
+    font-size: 2rem;
+  }
+
+  .carbon-header p {
+    font-size: 1.2rem;
+  }
+
+  .carbon-section {
+    padding: 30px 15px;
+  }
+
+  .carbon-container {
+    max-width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 15px 40px 25px 5px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+
+  input,
+  select,
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+}

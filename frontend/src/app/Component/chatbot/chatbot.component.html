@@ -1,0 +1,43 @@
+<!-- Chat Icon to Open/Close Chat -->
+<div class="chat-icon" (click)="toggleChat()">
+    <span class="material-symbols-outlined">forum</span>
+  </div>
+  
+  <!-- Chat Window -->
+  <div class="chat-container" *ngIf="isChatOpen">
+    <div class="chat-header">
+      <span class="chat-title">ExploreWay Guide</span>
+      <span class="close-icon" (click)="toggleChat()">✖</span>
+    </div>
+  
+    <div class="chat-body">
+      <div *ngFor="let msg of messages">
+        <div [ngClass]="{'user-message': msg.user, 'bot-message': !msg.user}">
+          {{ msg.text }}
+        </div>
+  
+        <!-- Quick Reply Buttons -->
+        <div *ngIf="!msg.user && msg.options" class="quick-replies">
+          <button *ngFor="let opt of msg.options" (click)="handleOptionClick(opt)">
+            {{ opt }}
+          </button>
+        </div>
+      </div>
+  
+      <!-- Typing indicator -->
+      <div *ngIf="isTyping" class="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <!-- Input Area -->
+    <div class="chat-footer">
+      <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+      <button (click)="sendMessage()">
+        <span class="send-icon">➤</span>
+      </button>
+    </div>
+  </div>
+  

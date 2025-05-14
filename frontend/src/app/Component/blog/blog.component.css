@@ -1,0 +1,238 @@
+.blog-picture {
+    background-image: url(../../../assets/Family-Holiday.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: opacity(0.7);
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+} 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 20px;
+}  
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}  
+.blog-post {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(25% - 20px); /* 4 posts per row */
+  min-width: 250px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}  
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}  
+.blog-post h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}  
+.blog-post p {
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}  
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+  
+.blog-post button {
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 5px 0 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}  
+.blog-post button:hover {
+  background: #e04848;
+}
+  
+.blog {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+ 
+.blog h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}  
+.blog form {
+  display: flex;
+  flex-direction: column;
+}
+  
+.blog input, 
+.blog textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+  
+.blog button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}  
+.blog button:hover {
+  background: #0056b3;
+}
+/* Media query for tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .blog-picture {
+    height: 400px; /* Adjust header image height */
+  }
+
+  .blog-post {
+    width: calc(50% - 20px); /* 2 posts per row */
+  }
+
+  .blog-post h3 {
+    font-size: 1.2rem; /* Adjust post title size */
+  }
+
+  .blog-post p {
+    font-size: 0.95rem; /* Adjust post text size */
+  }
+
+  .blog h2 {
+    font-size: 1.6rem; /* Adjust form title size */
+  }
+
+  .blog input,
+  .blog textarea,
+  .blog button {
+    font-size: 0.9rem; /* Adjust form element size */
+  }
+}
+
+/* Media query for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .blog-picture {
+    height: 300px; /* Further adjust header image height */
+  }
+
+  .blog-container {
+    padding: 15px; /* Adjust container padding */
+    gap: 15px; /* Adjust post gap */
+  }
+
+  .blog-post {
+    width: calc(100% - 20px); /* 1 post per row */
+    padding: 15px; /* Adjust post padding */
+  }
+
+  .blog-post h3 {
+    font-size: 1.1rem; /* Further adjust post title size */
+  }
+
+  .blog-post p {
+    font-size: 0.9rem; /* Further adjust post text size */
+  }
+
+  .blog-post img {
+    height: 150px; /* Adjust post image height */
+  }
+
+  .blog-post button {
+    font-size: 0.85rem; /* Adjust button size */
+    padding: 8px 12px;
+    margin-right: 3px;
+  }
+
+  .blog {
+    padding: 15px; /* Adjust form padding */
+  }
+
+  .blog h2 {
+    font-size: 1.4rem; /* Further adjust form title size */
+  }
+
+  .blog input,
+  .blog textarea,
+  .blog button {
+    font-size: 0.85rem; /* Further adjust form element size */
+    padding: 10px;
+    margin: 8px 0;
+  }
+}
+
+/* Media query for smaller mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .blog-picture {
+    height: 200px; /* Further adjust header image height */
+  }
+
+  .blog-container {
+    padding: 10px; /* Further adjust container padding */
+    gap: 10px; /* Further adjust post gap */
+  }
+
+  .blog-post {
+    padding: 10px; /* Further adjust post padding */
+  }
+
+  .blog-post h3 {
+    font-size: 1rem; /* Further adjust post title size */
+  }
+
+  .blog-post p {
+    font-size: 0.8rem; /* Further adjust post text size */
+  }
+
+  .blog-post img {
+    height: 120px; /* Further adjust post image height */
+  }
+
+  .blog-post button {
+    font-size: 0.8rem; /* Further adjust button size */
+    padding: 6px 10px;
+    margin-right: 2px;
+  }
+
+  .blog h2 {
+    font-size: 1.2rem; /* Further adjust form title size */
+  }
+
+  .blog input,
+  .blog textarea,
+  .blog button {
+    font-size: 0.8rem; /* Further adjust form element size */
+    padding: 8px;
+    margin: 6px 0;
+  }
+}

@@ -1,0 +1,200 @@
+.about {
+    background-image: url(../../../assets/lakshadweep.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-text {
+    position: absolute;
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    top: 50%;
+    bottom: 70%;
+    color: white;
+    text-align: center;
+}
+h4:hover {
+    color: yellow;
+    cursor: pointer;
+    transform: scale(1.2);
+    border: 1px solid white;
+}
+.about-us {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #fffbfb;
+}
+.about-us-text {
+    flex: 1 1 40%;
+    padding: 1rem;
+}
+.about-us-text h5 {
+    font-size: 2rem;
+    color: navy;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.about-us-text p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.about-us-image {
+    display: flex;
+    height: 400px;
+}
+.about-us-container {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+.about-us-image2 img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+.customer-text {
+    max-width: 600px;
+    height: 420px;
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.customer-text h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #111;
+}
+.customer-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+    color: #555;
+    font-style: italic;
+}
+/* Media query for tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .about {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .about-text {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text h4 {
+    font-size: 1.2rem;
+  }
+
+  .about-us {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-us-text {
+    flex: 1 1 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-us-text h5 {
+    font-size: 1.75rem;
+  }
+
+  .about-us-text p {
+    font-size: 1.1rem;
+  }
+
+  .about-us-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-us-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-us-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .about-us-image2 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .customer-text {
+    max-width: 100%;
+    padding: 20px;
+    height: auto; /* Ensure text fits */
+    text-align: center; /* Keep text centered */
+  }
+
+  .customer-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .customer-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Media query for mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text h4 {
+    font-size: 1rem;
+  }
+
+  .about-us-text h5 {
+    font-size: 1.5rem;
+  }
+
+  .about-us-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .customer-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .customer-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .customer-text {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+}

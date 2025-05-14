@@ -1,0 +1,67 @@
+<div class="vehicle">
+  <div class="vehicle-text">
+    <h1>Pricing</h1>
+    <h4 routerLink="/book-online" class="cursor-pointer underline">BookExploreWayTours > Pricing</h4>
+  </div>
+</div>
+
+<div *ngFor="let category of categories" class="mb-12">
+  <h1 class=" mt-8 text-3xl font-bold text-blue-900 mb-6 font-stretch-semi-condensed tracking-wide border-b-2 pb-2 border-blue-300 w-fit mx-auto">
+    Our competitive pricing at ExploreWay Tours at a Glance. Definitely worth it! <br/> 
+  </h1>
+  <h2 class="text-2xl font-bold text-blue-900 mb-6 font-stretch-normal tracking-wide border-b-2 pb-2 border-blue-300 w-fit mx-auto">
+    {{ category | titlecase }} 
+  </h2>
+
+  <div class="vehicle-grid">
+    <ng-container *ngFor="let vehicle of vehicles[category]">
+      <div class="vehicle-card">
+        <div class="vehicle-header">
+          <!-- Use safe navigation operator to check if sliderImages exists -->
+          <div class="slider-container" *ngIf="vehicle.sliderImages?.length">
+            <!-- Safely access sliderImages with ?. and default to index 0 if undefined -->
+            <img [src]="vehicle.sliderImages?.[vehicle.currentIndex ?? 0]" [alt]="vehicle.name" class="vehicle-image" />
+          </div>
+
+          <div class="slider-controls">
+            <button (click)="prevSlide(vehicle)" class="slider-btn">‹</button>
+            <button (click)="nextSlide(vehicle)" class="slider-btn">›</button>
+          </div>
+          
+          <h3 class="vehicle-name">{{ vehicle.name }}</h3>
+        </div>
+
+        <table class="pricing-table">
+          <!-- Pricing Rows -->
+          <tr *ngIf="vehicle.seatingCapacity || vehicle.sleeperCapacity">
+            <td class="vehicle-label">
+              {{ vehicle.seatingCapacity ? 'Seating' : 'Sleeper' }}
+            </td>
+            <td class="vehicle-amount">{{ vehicle.seatingCapacity || vehicle.sleeperCapacity }}</td>
+          </tr> 
+          <tr *ngFor="let price of vehicle.pricing">
+            <td class="vehicle-label">{{ price.label }}</td>
+            <td class="vehicle-amount">{{ price.amount }}</td>
+          </tr>
+          <!-- Specification Rows -->
+          <tr *ngIf="vehicle.luggageCapacity">
+            <td class="vehicle-label">Luggage</td>
+            <td class="vehicle-amount">{{ vehicle.luggageCapacity }}</td>
+          </tr>
+          <tr *ngIf="vehicle.engineType">
+            <td class="vehicle-label">Engine</td>
+            <td class="vehicle-amount">{{ vehicle.engineType }}</td>
+          </tr>
+          <tr *ngIf="vehicle.transmission">
+            <td class="vehicle-label">Transmission</td>
+            <td class="vehicle-amount">{{ vehicle.transmission }}</td>
+          </tr>
+          <!-- Note Row -->
+          <tr *ngIf="vehicle.note">
+            <td colspan="2" class="price-note">{{ vehicle.note }}</td>
+          </tr>
+        </table>        
+      </div>
+    </ng-container>
+  </div>
+</div>

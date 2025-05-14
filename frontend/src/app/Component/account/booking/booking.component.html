@@ -1,0 +1,46 @@
+<div class="bookings-container">
+  <h2>My Bookings</h2>
+
+  <div *ngIf="bookings.length > 0; else noBookings">
+    <div
+      class="booking-card"
+      *ngFor="let booking of bookings"
+      [ngClass]="{
+        'cab-booking': booking.type === 'Cab',
+        'bus-booking': booking.type === 'Bus'
+      }"
+    >
+      <h3>{{ booking.type }} Booking</h3>
+
+      <div class="details-container">
+        <p><strong>Pickup:</strong> {{ booking.pickupLocation }}</p>
+        <p><strong>Dropoff:</strong> {{ booking.dropLocation }}</p>
+        <p><strong>Date:</strong> {{ booking.pickupDate || booking.departureDate }}</p>
+        <p>
+          <strong>Vehicle Type:</strong>
+          {{ booking.vehicleType || booking.busType }}
+        </p>
+        <p *ngIf="booking.amenities && booking.amenities.length > 0">
+          <strong>Amenities:</strong> {{ booking.amenities.join(', ') }}
+        </p>
+        <p *ngIf="booking.transferType">
+          <strong>Transfer Type:</strong> {{ booking.transferType }}
+        </p>
+        <p *ngIf="booking.returnDate">
+          <strong>Return Date:</strong> {{ booking.returnDate }}
+        </p>
+      </div>
+
+      <div class="bottom-section">
+        <div class="barcode"></div>
+        <button (click)="cancelBooking(booking.id, booking.type )" class="cancel-btn">
+          Cancel Booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noBookings>
+    <p>No bookings found.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <span class="flex items-center cursor-pointer" routerLink="/home">
+      <img src="../../../assets/flight.png" alt="Logo" class="h-10 w-10 mr-2"/>
+      <span class="text-3xl font-bold underline decoration-cyan-300 decoration-2 font-sans cursor-pointer" routerLink="/home">
+        <span style="color: orange;">Expl</span>
+        <span style="color: white;">ore</span>
+        <span style="color: red;">Way</span>
+      </span>
+    </span>
+    <div class="navbar"></div>
+    <a mat-button class="button" routerLink="/home" routerLinkActive="active">Home</a>
+    <a mat-button class="button" routerLink="/about-us" routerLinkActive="active">About US</a>
+    <a mat-button class="button" routerLink="/services" routerLinkActive="active">Services</a>
+    <a mat-button class="button" routerLink="/vehicles" routerLinkActive="active">Pricing</a>
+    <a mat-button class="button" routerLink="/contact-us" routerLinkActive="active">Contact US</a>
+    <button mat-button [matMenuTriggerFor]="menu" >
+      <span class="material-symbols-outlined ">
+        more
+      </span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button class="drop-down" mat-menu-item routerLink="/book-online" routerLinkActive="active">Book Online</button>
+      <button class="drop-down" mat-menu-item routerLink="/carbon-calculator" routerLinkActive="active">Carbon Calculator</button>
+      <button class="drop-down" mat-menu-item routerLink="/blog" routerLinkActive="active">Blog</button>
+      <button class="drop-down" mat-menu-item routerLink="/account" routerLinkActive="active">Account</button>
+    </mat-menu>
+</mat-toolbar>

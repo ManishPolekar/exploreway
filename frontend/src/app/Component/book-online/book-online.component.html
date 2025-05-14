@@ -1,0 +1,149 @@
+<div class="book-online"> </div>
+<div class="payment">
+  <div class="payment-container">
+    <p>This is Online Cab-Booking System where you can book and pay online to secure and reserve your ride with us. Online payment can be made by all popular credit cards and debit cards(Mastercard, Visa, etc).Payments are processed by Stripe Payment Gateway(a secured payment processor), no card details will be stored in our website.<br>
+        <b class="text-red-700">To be noted,Incase of cancellation, 90% refund will be made to the same card used for payment,and the 10% will be charged as cancellation or processing fee.</b><br>
+        Please make your booking at least 24 hours in advance.<br>
+        Look at the Summary for the the actual cost, before proceeding with paymment.<br>
+     </p>
+     <h5 class="text-red-600">- Minimum 3 hours is required for hourly booking. By requesting 1 or 2 hours ride, fee will be charged to make up the full price of 3 hours.<br>
+         - For Airport Pickup/Transfers, please provide the flight number or arrival time.<br>
+         - For Hourly booking, please provide the pickup time and the drop off time.<br>
+         - Rs500 to Rs2,500 will be charged for advance booking, where Rs500 will be charged for extending or extra hour depending on the vehicle type.<br>
+         - Rs 500 will be charged for extra per/hour depending on the vehicle type.<br>
+         - 5% discount will be given for booking 3 days in advance.<br><br>
+     </h5>
+     <p><b> You can also check out our Pricing Page before booking.</b></p>
+     <img class="stripe" src="../../../assets/stripe-payment.png" alt="visa"/>
+  </div>      
+</div>
+<!--BookingForm-->
+<section class="booking-form">
+  <div class="form-container">  
+    <mat-tab-group animationDuration="1000ms">
+        <mat-tab label="CAB Booking">
+            <form [formGroup]="distanceForm" (ngSubmit)="onSubmitDistance()">
+                <div class="form-group">
+                    <label for="vehicleType">Vehicle Type:</label>
+                    <select id="vehicleType" formControlName="vehicleType" required>
+                        <option value="Swift">Swift Dezire(Sedan)</option>
+                        <option value="Tigor(EV)">Tigor(Electric Sedan)</option>
+                        <option value="H-City">Honda City(Sedan)</option>
+                        <option value="Creata">Creta(SUV)</option>
+                        <option value="Nexon-EV">Nexon(EV-SUV)</option>
+                        <option value="Ertiga">Ertiga(MPV)</option>
+                        <option value="Hycross">Hycross(MPV)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <mat-label>Amenities:</mat-label>
+                    <div class="amenities">
+                      <mat-checkbox (change)="onAmenityChange($event, 'Wi-Fi')">Wi-Fi</mat-checkbox>
+                      <mat-checkbox (change)="onAmenityChange($event, 'Charging Ports')">Charging Ports</mat-checkbox>
+                      <mat-checkbox (change)="onAmenityChange($event, 'Air Conditioning')">Air Conditioning</mat-checkbox>
+                      <mat-checkbox (change)="onAmenityChange($event, 'Entertainment System')">Entertainment System</mat-checkbox>
+                      <mat-checkbox (change)="onAmenityChange($event, 'Washroom')">Washroom</mat-checkbox>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="pickupDate">Pickup Date:</label>
+                    <input type="date" id="pickupDate" formControlName="pickupDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickupLocation">Pickup Location:</label>
+                    <input type="text" id="pickupLocation" formControlName="pickupLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="dropoffLocation">Dropoff Location:</label>
+                    <input type="text" id="dropLocation" formControlName="dropLocation" required>
+                </div>
+                <div class="form-group" *ngIf="distanceForm.get('transferType')?.value === 'round-trip'">
+                    <label for="returnDate">Return Date:</label>
+                    <input type="date" id="returnDate" formControlName="returnDate">
+                  </div>                      
+                <div class="form-group">
+                    <label for="transferType">Transfer Type:</label>
+                    <select id="transferType" formControlName="transferType">
+                      <option value="one-way">One Way</option>
+                      <option value="round-trip">Round Trip</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </mat-tab>
+        <mat-tab label="BUS Booking">
+            <form [formGroup]="BusForm" (ngSubmit)="onSubmitBus()">
+                <div class="form-group">
+                    <mat-label>Select Bus Type</mat-label>
+                    <mat-select formControlName="busType">
+                        <mat-option value="Urbania Mini-Bus">Urbania Mini-Bus(14 Seater)</mat-option>
+                        <mat-option value="Urbania Mini-Bus(16 Seater)">Urbania Mini-Bus(16 Seater)</mat-option>
+                        <mat-option value="Urbania Mini-Bus(18 Seater)">Urbania Mini-Bus(18 Seater)</mat-option>
+                        <mat-option value="Volvo 9400 Coach-Bus">Volvo 9400 Coach-Bus</mat-option>
+                        <mat-option value="Mercedes-Benz Tourider Coach-Bus">Mercedes-Benz Tourider Coach-Bus</mat-option>
+                        <mat-option value="Volvo 9600 Sleeper-Bus">Volvo 9600 Sleeper-Bus</mat-option>
+                        <mat-option value="JBM Luxury EV-Bus">JBM Luxury EV-Bus</mat-option>
+                    </mat-select>
+                </div>
+                <div class="form-group">
+                    <mat-label>Amenities:</mat-label>
+                    <div class="amenities">
+                        <mat-checkbox (change)="onBusAmenityChange($event, 'Wi-Fi')">Wi-Fi</mat-checkbox>
+                        <mat-checkbox (change)="onBusAmenityChange($event, 'Charging Ports')">Charging Ports</mat-checkbox>
+                        <mat-checkbox (change)="onBusAmenityChange($event, 'Air Conditioning')">Air Conditioning</mat-checkbox>
+                        <mat-checkbox (change)="onBusAmenityChange($event, 'Entertainment System')">Entertainment System</mat-checkbox>
+                        <mat-checkbox (change)="onBusAmenityChange($event, 'Washroom')">Washroom</mat-checkbox>
+                    </div>    
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Pickup Location</mat-label>
+                        <input matInput formControlName="pickupLocation" placeholder="Enter pickup location">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Drop Location</mat-label>
+                        <input matInput formControlName="dropLocation" placeholder="Enter drop location">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Departure Date</mat-label>
+                        <input matInput [matDatepicker]="picker1" formControlName="departureDate">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Return Date</mat-label>
+                        <input matInput [matDatepicker]="picker2" formControlName="returnDate">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button class="bus-button" color="primary" type="submit">Book Now</button>
+            </form>
+        </mat-tab>        
+    </mat-tab-group>
+  </div>
+  <!--Map-->
+  <div class="map-container" >
+    <div id="map" style="height: 600px; overflow: hidden;"></div> 
+  </div>
+</section>
+<div class="contact">
+    <div class="text-box">
+      <div class="contact-text">
+        <span class="material-symbols-outlined">
+            contact_phone
+        </span>
+        <h2>Not Ready To Book</h2>
+        <p>Use our contact form to get in touch</p>
+        <button routerLink="/contact-us">Contact Us</button>
+      </div>
+    </div>  
+</div>
+

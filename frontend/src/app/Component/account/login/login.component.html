@@ -1,0 +1,67 @@
+<div class="auth-container">
+  <h2 *ngIf="!isLoggedIn">{{ isForgotPassword ? 'Reset Password' : isLogin ? 'Login' : 'Sign Up' }}</h2>
+  <h2 *ngIf="isLoggedIn">Welcome, {{ loggedInUser }}</h2>
+
+  <!-- Profile Picture Display -->
+  <div *ngIf="isLoggedIn && profilePic">
+      <img [src]="profilePic" alt="Profile Picture" class="profile-pic" />
+  </div>
+
+  <!-- Login/Sign Up Form -->
+  <form (ngSubmit)="onSubmit()" *ngIf="!isLoggedIn && !isForgotPassword">
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input [type]="showPassword ? 'text' : 'password'" id="password" type="password" id="password" [(ngModel)]="password" name="password" required />
+          <span class="material-icons visibility-toggle" (click)="togglePasswordVisibility()">
+                {{ showPassword ? 'visibility_off' : 'visibility' }}
+          </span>
+      </div>
+      <!-- Username (Only for Sign Up) -->
+      <div class="form-group" *ngIf="!isLogin">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" required />
+      </div>
+
+      <!-- Confirm Password (Only for Sign Up) -->
+      <div class="form-group" *ngIf="!isLogin">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+      </div>
+
+      <!-- Profile Picture Upload (Only for Sign Up) -->
+      <div class="form-group" *ngIf="!isLogin">
+          <label for="profilePic">Upload Profile Picture</label>
+          <input type="file" id="profilePic" (change)="onFileChange($event)" accept="image/*" />
+      </div>
+
+      <button type="submit">{{ isLogin ? 'Login' : 'Sign Up' }}</button>
+  </form>
+
+  <!-- Reset Password Form -->
+  <form (ngSubmit)="resetPassword()" *ngIf="isForgotPassword">
+      <div class="form-group">
+          <label for="resetEmail">Enter your registered email</label>
+          <input type="email" id="resetEmail" [(ngModel)]="resetEmail" name="resetEmail" required />
+      </div>
+      <button type="submit">Send Link</button>
+  </form>
+
+  <!-- Toggle Between Login and Sign Up -->
+  <p *ngIf="!isLoggedIn && !isForgotPassword">
+      {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
+      <a (click)="toggleForm()">{{ isLogin ? 'Sign Up' : 'Login' }}</a>
+  </p>
+
+  <!-- Forgot Password Link -->
+  <p *ngIf="isLogin && !isLoggedIn">
+      <a (click)="toggleForgotPassword()">Forgot Password?</a>
+  </p>
+
+  <!-- Logout Button -->
+  <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+</div>

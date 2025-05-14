@@ -1,0 +1,186 @@
+/* Container styling */
+.bookings-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  /* Title styling */
+  .bookings-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Booking list container */
+  .bookings-container > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1320px; /* Ensures 4 cards fit in one row */
+  }
+  
+  /* Booking card */
+  .booking-card {
+    flex: 0 0 calc(33.333% - 20px); /* 3 cards per row with spacing */
+    max-width: 320px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Booking Type Header */
+  .booking-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #444;
+  }
+  
+  /* Booking Details */
+  .details-container {
+    margin-top: 15px;
+  }
+  
+  .details-container p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Bottom Section */
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Barcode */
+  .barcode {
+    width: 80px;
+    height: 35px;
+    background: repeating-linear-gradient(
+      90deg,
+      black 0px,
+      black 5px,
+      white 5px,
+      white 10px
+    );
+    border-radius: 5px;
+  }
+  
+  /* Cancel Button */
+  .cancel-btn {
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .cancel-btn:hover {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+  }
+  
+  /* Different styles for bus and cab bookings */
+  .cab-booking {
+    border-left: 6px solid #007bff;
+  }
+  
+  .bus-booking {
+    border-left: 6px solid #28a745;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .bookings-container > div {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .booking-card {
+      width: 90%;
+    }
+  }
+  /* Responsive Styles */
+@media (max-width: 1024px) {
+  .booking-card {
+    flex: 0 0 calc(50% - 20px); /* 2 cards per row */
+    max-width: 450px; /* Adjust max width */
+  }
+}
+
+@media (max-width: 768px) {
+  .bookings-container > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-card {
+    width: 90%;
+    max-width: none; /* Remove max width for full width */
+  }
+
+  .booking-card h3 {
+    font-size: 1.8rem; /* Larger heading on mobile */
+  }
+
+  .details-container p {
+    font-size: 1.1rem; /* Slightly larger text on mobile */
+  }
+
+  .cancel-btn {
+    font-size: 1rem; /* Adjust button size on mobile */
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookings-container h2 {
+    font-size: 24px; /* Smaller title on smaller mobiles */
+    margin-bottom: 20px;
+  }
+
+  .details-container p {
+    font-size: 1rem; /* Further adjust text size */
+  }
+
+  .cancel-btn {
+    font-size: 0.9rem; /* Further adjust button size */
+    padding: 10px 14px;
+  }
+
+  .barcode {
+    width: 60px; /* Smaller barcode on smaller screens */
+    height: 25px;
+  }
+
+  .bookings-container > ng-template > p {
+    font-size: 1.4rem; /* Adjust no bookings message size */
+  }
+}

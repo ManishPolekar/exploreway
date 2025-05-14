@@ -1,0 +1,42 @@
+.account-container {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    height: 100vh;
+}
+
+.account-topbar {
+    width: 100%;
+    height: 60px; /* Adjust as needed */
+    background-color: #333; /* Change to your preferred color */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow-y: auto; /* Allows scrolling if needed */
+}
+
+@media (max-width: 600px) {
+  .account-topbar {
+    height: auto; /* Allow topbar to grow if content wraps */
+    flex-direction: column; /* Stack topbar elements */
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 15px; /* Adjust padding */
+  }
+  .account-content {
+    padding: 10px; /* Further reduce content padding */
+  }
+}
+
+/* Media query for smaller mobile devices (max-width: 400px) */
+@media (max-width: 400px) {
+  .account-content {
+    padding: 8px; /* Further reduce content padding */
+  }
+}

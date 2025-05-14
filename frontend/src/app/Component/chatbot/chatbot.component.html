@@ -13,6 +13,9 @@
     <div class="chat-body">
       <div *ngFor="let msg of messages">
         <div [ngClass]="{'user-message': msg.user, 'bot-message': !msg.user}">
+          <ng-container *ngIf="!msg.user">
+            <span class="material-symbols-outlined bot-icon">android</span>
+          </ng-container>
           {{ msg.text }}
         </div>
   
